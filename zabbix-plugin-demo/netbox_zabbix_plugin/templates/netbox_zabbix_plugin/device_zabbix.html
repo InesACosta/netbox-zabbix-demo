@@ -1,0 +1,30 @@
+{# netbox_zabbix_plugin/templates/netbox_zabbix_plugin/device_zabbix.html #}
+{% extends "dcim/device.html" %}
+{% load helpers %}
+
+{% block content %}
+<div class="row mb-3">
+  <div class="col-md-4">
+    <div class="card card-body">
+      <h5>Zabbix</h5>
+
+      {% if not device.primary_ip %}
+        <p class="text-muted">No primary IP configured on this device.</p>
+
+      {% elif not zabbix_link %}
+        <p class="text-muted">
+          No matching host found in Zabbix for IP 
+          <strong>{{ device.primary_ip.address.ip }}</strong>.
+        </p>
+
+      {% else %}
+        <a href="{{ zabbix_link }}" target="_blank"
+           class="btn btn-primary btn-block">
+          View in Zabbix ↗
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

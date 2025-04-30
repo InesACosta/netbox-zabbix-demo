@@ -1,0 +1,13 @@
+README.md
+setup.py
+netbox_zabbix_plugin/__init__.py
+netbox_zabbix_plugin/navigation.py
+netbox_zabbix_plugin/urls.py
+netbox_zabbix_plugin.egg-info/PKG-INFO
+netbox_zabbix_plugin.egg-info/SOURCES.txt
+netbox_zabbix_plugin.egg-info/dependency_links.txt
+netbox_zabbix_plugin.egg-info/entry_points.txt
+netbox_zabbix_plugin.egg-info/top_level.txt
+netbox_zabbix_plugin/views/__init__.py
+netbox_zabbix_plugin/views/device_zabbix.py
+netbox_zabbix_plugin/views/home.py

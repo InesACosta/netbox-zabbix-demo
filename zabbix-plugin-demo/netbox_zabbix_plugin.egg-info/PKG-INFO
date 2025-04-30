@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: netbox-zabbix-plugin
+Version: 0.1.0
+Summary: Adds a Zabbix link tab to NetBox devices
+Author: Inês Costa

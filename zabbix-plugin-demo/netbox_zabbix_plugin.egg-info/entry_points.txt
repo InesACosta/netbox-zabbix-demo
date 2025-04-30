@@ -1,0 +1,2 @@
+[netbox.plugins]
+netbox_zabbix_plugin = netbox_zabbix_plugin.config:ZabbixPluginConfig

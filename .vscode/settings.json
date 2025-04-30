@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+      "/opt/netbox/netbox/",
+      "/home/netbox-plugin-demo/zabbix-plugin-demo",
+    ],
+    "python.pythonPath": "/opt/netbox/venv/bin/python"
+  }
