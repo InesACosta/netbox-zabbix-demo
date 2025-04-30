@@ -33,14 +33,24 @@ class DiscoveredHostView(View):
         })
     def post(self, request, pk):
         host = get_object_or_404(DiscoveredHost, pk=pk)
+        
+        # does object exist in netbox
+        
+    
+        existing = Device.objects.filter(name=host.name).first()
+        if not existing and host.ip_address:
+            existing = Device.objects.filter(
+                primary_ip4__address__istartswith=host.ip_address
+            ).first()
 
+        if existing:
+            return redirect('dcim:device', existing.pk)
         ip_obj = None
         if host.ip_address:
             ip_obj, _ = IPAddress.objects.get_or_create(
                 address = f"{host.ip_address}/32" #TODO
             )
         # check what type of device role it is
-        print(host.os)
         if host.os.__contains__("Linux"):
             role = DeviceRole.objects.get(name="Server")
         elif host.os.__contains__("Unknown"):
