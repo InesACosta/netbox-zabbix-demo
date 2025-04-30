@@ -1,0 +1,2 @@
+# netbox_zabbix_plugin
+netbox_zabbix_plugin
